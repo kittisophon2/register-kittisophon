@@ -8,6 +8,7 @@ const cors = require("cors");
 const productRoute = require('./routes/product.route');
 const customersRoute = require('./routes/customer.route');
 const registersRoute = require('./routes/register.route')
+const userRoute = require("./routes/user.route");
 
 app.use('/images', express.static('images'));
 app.use('/userpicture', express.static('userpicture'));
@@ -30,3 +31,4 @@ app.use("/registers", registersRoute)
 app.listen(port, () => {
   console.log("App started at port: " + port);
 });
+app.use("/users", userRoute);
